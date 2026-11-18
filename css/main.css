@@ -1,0 +1,114 @@
+ #page-gallery header {
+     text-align: center;
+ }
+
+ .gallery {
+     position: relative;
+     max-width: 800px;
+     margin: 0 auto;
+ }
+
+ .gallery .gallery__left,
+ .gallery .gallery__right {
+     position: absolute;
+     background-color: rgba(240, 248, 255, 0.764);
+     top: 50%;
+     z-index: 1;
+     transform: translateY(-50%);
+ }
+
+ .gallery .gallery__left {
+     right: 0;
+     padding: 7px 10px;
+     display: flex;
+     z-index: 3;
+     border-radius: 100% 0 0% 100%;
+ }
+
+ .gallery .gallery__right {
+     left: 0;
+     padding: 7px 10px;
+     display: flex;
+     z-index: 3;
+     border-radius: 0% 100% 100% 0%;
+ }
+
+ .gallery svg.arraw_left,
+ .gallery svg.arraw_right {
+     width: 30px;
+     height: 35px;
+ }
+
+ .gallery .galler__keyhole {
+     overflow: hidden;
+ }
+
+ .gallery .gallery__ul {
+     display: flex;
+ }
+
+ .gallery .gallery__ul .gallery__content {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+
+ .gallery .gallery__ul li {
+     flex: 1 0 100%;
+     display: grid;
+     position: relative;
+     user-select: none;
+ }
+
+ .gallery .gallery__ul .gallery__img {
+     grid-column: 1 / span 2;
+     width: 100%;
+     display: block;
+     object-fit: cover;
+     grid-row: 1
+ }
+
+ .gallery .gallery__ul .gallery__title {
+     grid-column: 1 / span 2;
+     grid-row: 1 / 1;
+     align-self: end;
+     background-color: #f0f8ff70;
+     text-align: center;
+     width: 100%;
+
+ }
+
+ /* DOTS */
+ .dotWrapper ul {
+     position: relative;
+     display: flex;
+     justify-content: center;
+     background-color: rgb(194, 221, 247);
+     padding: 7px 5px;
+     border-bottom-left-radius: 4px;
+     border-bottom-right-radius: 4px;
+ }
+
+ .dot {
+     width: 14px;
+     height: 14px;
+     border-radius: 50%;
+     background-color: aliceblue;
+     display: block;
+     position: relative;
+     margin: 0 4px;
+ }
+
+ .inner-dot {
+     width: 7px;
+     height: 7px;
+     display: block;
+     border-radius: 50%;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ .dot.active .inner-dot {
+     background-color: black;
+ }
