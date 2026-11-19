@@ -13,7 +13,7 @@ export default function FrontArrow({ imgIndex, setImgIndex, imgArray }) {
 
     return (
         <>
-            <figure onClick={goForward}>
+            <figure onClick={goForward} className='gallery__left'>
                 <FaArrowRight />
             </figure>
         </>

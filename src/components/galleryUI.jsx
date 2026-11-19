@@ -17,7 +17,7 @@ export default function GalleryUI() {
 
     return (
         <>
-            <section>
+            <section className="gallery">
                 <Image imgArray={imgArray} imgIndex={imgIndex} />
 
                 <BackArrow imgIndex={imgIndex} setImgIndex={setImgIndex} imgArray={imgArray} />

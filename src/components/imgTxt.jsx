@@ -16,8 +16,6 @@ export default function ImgTxt({ imgArray, setImgIndex, imgIndex }) {
     // 
     function setToThisImg(index, event) {
 
-        console.log(index);
-
         setImgIndex(index)
 
         setDotsArray(dotsArray.map((dot, indexOfDot) => (index == indexOfDot) ? ({ initialState: true }) : ({ initialState: false })))
@@ -26,21 +24,27 @@ export default function ImgTxt({ imgArray, setImgIndex, imgIndex }) {
 
     return (
         <>
-            <div>
-                <p>
-                    {imgArray[imgIndex].name}
-                </p>
-            </div>
+            <div className="dotWrapper">
+                <ul>
+                    {
+                        dotsArray.map((dot, index) =>
+                            (dot.initialState == true) ?
+                                <li key={index}
+                                    className="dot">
+                                    <span className="inner-dot on"></span>
+                                </li>
 
-            <ul>
-                {
-                    dotsArray.map((dot, index) =>
-                        (dot.initialState == true) ?
-                            <li key={index} ><span className="on"></span></li> :
-                            <li key={index} onClick={() => setToThisImg(index)}><span></span></li>
-                    )
-                }
-            </ul>
+                                :
+
+                                <li key={index}
+                                    className="dot"
+                                    onClick={() => setToThisImg(index)}>
+                                    <span className="inner-dot"></span>
+                                </li>
+                        )
+                    }
+                </ul>
+            </div>
         </>
     )
 }

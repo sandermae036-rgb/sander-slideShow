@@ -13,7 +13,7 @@ export default function BackArrow({ imgIndex, setImgIndex, imgArray }) {
 
     return (
         <>
-            <figure onClick={goBackward}>
+            <figure onClick={goBackward} className='gallery__right'>
                 <FaArrowLeft />
             </figure>
         </>
