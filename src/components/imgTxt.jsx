@@ -4,19 +4,23 @@ export default function ImgTxt({ imgArray, setImgIndex, imgIndex }) {
 
     const [dotsArray, setDotsArray] = useState([])
 
+
+
     useEffect(() => {
 
-        setDotsArray(imgArray.map(() => ({ initialState: false })))
+        setDotsArray(imgArray.map((dot, index) => (imgIndex == index) ? ({ initialState: true }) : ({ initialState: false })))
 
-    }, [])
-
-    console.log(dotsArray);
+    }, [imgIndex])
 
 
+    // 
     function setToThisImg(index, event) {
+
+        console.log(index);
+
         setImgIndex(index)
 
-        setDotsArray(dotsArray.map((dot, indexOfDot) => (index === indexOfDot) ? { initialState: true } : { initialState: false }))
+        setDotsArray(dotsArray.map((dot, indexOfDot) => (index == indexOfDot) ? ({ initialState: true }) : ({ initialState: false })))
 
     }
 
@@ -24,7 +28,7 @@ export default function ImgTxt({ imgArray, setImgIndex, imgIndex }) {
         <>
             <div>
                 <p>
-                    {""}
+                    {imgArray[imgIndex].name}
                 </p>
             </div>
 

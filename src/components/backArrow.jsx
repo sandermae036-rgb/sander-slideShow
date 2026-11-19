@@ -4,8 +4,8 @@ export default function BackArrow({ imgIndex, setImgIndex, imgArray }) {
 
     function goBackward() {
 
-        if (imgIndex == 1) {
-            setImgIndex(imgArray.length)
+        if (imgIndex == 0) {
+            setImgIndex(imgArray.length - 1)
         } else {
             setImgIndex(imgIndex - 1)
         }

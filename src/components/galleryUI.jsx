@@ -13,7 +13,7 @@ export default function GalleryUI() {
     ])
 
 
-    const [imgIndex, setImgIndex] = useState(1)
+    const [imgIndex, setImgIndex] = useState(0)
 
     return (
         <>

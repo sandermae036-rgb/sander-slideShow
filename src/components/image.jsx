@@ -2,7 +2,7 @@
 
 export default function Image({ imgIndex, imgArray }) {
 
-    const img = imgIndex - 1
+    const img = imgIndex
 
     return (
         <>

@@ -4,8 +4,8 @@ export default function FrontArrow({ imgIndex, setImgIndex, imgArray }) {
 
     function goForward() {
 
-        if (imgIndex == imgArray.length) {
-            setImgIndex(1)
+        if (imgIndex == imgArray.length - 1) {
+            setImgIndex(0)
         } else {
             setImgIndex(imgIndex + 1)
         }
