@@ -1,5 +1,25 @@
+import { useEffect, useState } from "react";
 
-export default function ImgTxt() {
+export default function ImgTxt({ imgArray, setImgIndex, imgIndex }) {
+
+    const [dotsArray, setDotsArray] = useState([])
+
+    useEffect(() => {
+
+        setDotsArray(imgArray.map(() => ({ initialState: false })))
+
+    }, [])
+
+    console.log(dotsArray);
+
+
+    function setToThisImg(index, event) {
+        setImgIndex(index)
+
+        setDotsArray(dotsArray.map((dot, indexOfDot) => (index === indexOfDot) ? { initialState: true } : { initialState: false }))
+
+    }
+
     return (
         <>
             <div>
@@ -8,14 +28,15 @@ export default function ImgTxt() {
                 </p>
             </div>
 
-            <form action="#" method="post">
-                <input type="radio" name="img1" id="1" />
-                <input type="radio" name="img2" id="2" />
-                <input type="radio" name="img3" id="3" />
-                <input type="radio" name="img4" id="4" />
-                <input type="radio" name="img5" id="5" />
-                <input type="radio" name="img6" id="6" />
-            </form>
+            <ul>
+                {
+                    dotsArray.map((dot, index) =>
+                        (dot.initialState == true) ?
+                            <li key={index} ><span className="on"></span></li> :
+                            <li key={index} onClick={() => setToThisImg(index)}><span></span></li>
+                    )
+                }
+            </ul>
         </>
     )
 }

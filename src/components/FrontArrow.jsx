@@ -1,4 +1,4 @@
-import { FaArrowLeft } from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6'
 
 export default function FrontArrow({ imgIndex, setImgIndex, imgArray }) {
 
@@ -14,7 +14,7 @@ export default function FrontArrow({ imgIndex, setImgIndex, imgArray }) {
     return (
         <>
             <figure onClick={goForward}>
-                <FaArrowLeft />
+                <FaArrowRight />
             </figure>
         </>
     )
